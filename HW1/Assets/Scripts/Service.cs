@@ -7,14 +7,15 @@ public class Service : MonoBehaviour
 {
     public static void Initlization()
     {
-        AIManagerInGame = new AIManager();
+        //AIManagerInGame = new AILifecycleManager();
     }
     
     public static PlayerController PlayerControllerInGame;
-    public static AIManager AIManagerInGame;
+    public static AILifecycleManager AIManagerInGame;
+    public static GameLevelSystem GameLevelSystemInGame;
 
     private void Update()
     {
-        AIManagerInGame.Updating();
+        AIManagerInGame.Updating(GameLevelSystemInGame.AIs);
     }
 }
