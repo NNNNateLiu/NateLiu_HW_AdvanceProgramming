@@ -10,6 +10,5 @@ public class AI : MonoBehaviour
     private void Start()
     {
         AIRigidbody = gameObject.GetComponent<Rigidbody>();
-        Service.GameLevelSystemInGame.AIs.Add(this);
     }
 }

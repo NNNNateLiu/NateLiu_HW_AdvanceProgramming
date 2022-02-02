@@ -7,15 +7,17 @@ public class Service : MonoBehaviour
 {
     public static void Initlization()
     {
-        //AIManagerInGame = new AILifecycleManager();
+        AIManagerInGame = new AILifecycleManager();
+        CubeLifeCycleManagerInGame = new CubeLifeCycleManager();
     }
     
     public static PlayerController PlayerControllerInGame;
     public static AILifecycleManager AIManagerInGame;
     public static GameLevelSystem GameLevelSystemInGame;
+    public static CubeLifeCycleManager CubeLifeCycleManagerInGame;
 
     private void Update()
     {
-        AIManagerInGame.Updating(GameLevelSystemInGame.AIs);
+        AIManagerInGame.Updating();
     }
 }
