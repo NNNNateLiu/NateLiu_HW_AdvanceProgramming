@@ -6,6 +6,8 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     public Rigidbody AIRigidbody;
+    public GameObject Target;
+    public int teamNumber;
 
     private void Start()
     {

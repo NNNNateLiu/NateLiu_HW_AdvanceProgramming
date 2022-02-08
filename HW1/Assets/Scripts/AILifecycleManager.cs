@@ -7,6 +7,8 @@ public class AILifecycleManager
 {
     private List<GameObject> AIs = new List<GameObject>();
 
+    public List<GameObject> test = new List<GameObject>();
+
     private void Awake()
     {
         Service.AIManagerInGame = this;
