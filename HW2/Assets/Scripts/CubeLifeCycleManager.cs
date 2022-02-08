@@ -33,7 +33,18 @@ public class CubeLifeCycleManager
     
     public void Destruction()
     {
-        
+        if (Cubes.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            foreach (var cube in Cubes)
+            {
+                Object.Destroy(cube);    
+            }
+            Cubes.Clear();
+        }
     }
     
     public void Tracking()

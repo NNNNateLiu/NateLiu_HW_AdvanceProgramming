@@ -97,5 +97,12 @@ public class Event_OnGameStart : AGPEvent
 
 public class Event_OnTimeUp : AGPEvent
 {
+	public readonly int redTeamScore;
+	public readonly int blueTeamScore;
 	
+	public Event_OnTimeUp(int redTeamScore, int blueTeamScore)
+	{
+		this.redTeamScore = redTeamScore;
+		this.blueTeamScore = blueTeamScore;
+	}
 }

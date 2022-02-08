@@ -14,6 +14,7 @@ public class GameLevelSystem : MonoBehaviour
     public GameObject startMenuObject;
     public GameObject endMenuObject;
     public GameObject inGameMenuObject;
+    public Text txt_EndGameWinMessage;
     public Text txt_RedTeamScore;
     public Text txt_BlueTeamScore;
     public Text txt_TimeCountDown;
@@ -29,6 +30,8 @@ public class GameLevelSystem : MonoBehaviour
     public int playerNumberForEachTeam;
     public Material redTeamMaterial;
     public Material blueTeamMaterial;
+    public Transform playerStartPoint;
+    public GameObject player;
     
     
     //public List<CollectableCubes> collectableCubes;
@@ -86,10 +89,14 @@ public class GameLevelSystem : MonoBehaviour
         public override void OnEnter()
         {
             base.OnEnter();
+            Context.currentGameTime = 0;
+            Context.currentWave = 0;
+            Service.GameLevelSystemInGame.txt_RedTeamScore.text = "Red: " + 0;
+            Service.GameLevelSystemInGame.txt_BlueTeamScore.text = "Blue: " + 0;
             Service.AIManagerInGame.Creation();
             Service.ScoreManagerInGame.Creation();
             Context.inGameMenuObject.SetActive(true);
-            
+            Context.player.transform.position = Context.playerStartPoint.position;
         }
 
         public override void Update()
@@ -101,10 +108,13 @@ public class GameLevelSystem : MonoBehaviour
             //track nearest cube and run towards it
             Service.AIManagerInGame.Updating();
             Context.currentGameTime += Time.deltaTime;
-            Context.txt_TimeCountDown.text = "Time Left: " + Math.Floor(60 - Context.currentGameTime);
-            if (Context.currentGameTime >= 60)
+            Context.txt_TimeCountDown.text = "Time Left: " + Math.Floor(Context.totalGameTime - Context.currentGameTime);
+            if (Context.currentGameTime >= Context.totalGameTime)
             {
-                Service.EventManagerInGame.Fire(new Event_OnTimeUp());
+                int _blueTeamScore = Service.ScoreManagerInGame.blueTeamScore;
+                int _redTeamScore = Service.ScoreManagerInGame.redTeamScore;
+                
+                Service.EventManagerInGame.Fire(new Event_OnTimeUp(_blueTeamScore,_redTeamScore));
             }
         }
 
@@ -113,6 +123,7 @@ public class GameLevelSystem : MonoBehaviour
             base.OnExit();
             Service.AIManagerInGame.Destruction();
             Service.ScoreManagerInGame.Destruction();
+            Service.CubeLifeCycleManagerInGame.Destruction();
             Context.inGameMenuObject.SetActive(false);
         }
     }
@@ -121,6 +132,7 @@ public class GameLevelSystem : MonoBehaviour
     {
         public override void OnEnter()
         {
+
             base.OnEnter();
             Context.endMenuObject.SetActive(true);
         }
@@ -128,6 +140,10 @@ public class GameLevelSystem : MonoBehaviour
         public override void Update()
         {
             base.Update();
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                Service.EventManagerInGame.Fire(new Event_OnGameStart());
+            }
         }
 
         public override void OnExit()

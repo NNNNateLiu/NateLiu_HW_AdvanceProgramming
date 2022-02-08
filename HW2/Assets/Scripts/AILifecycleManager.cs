@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class AILifecycleManager
@@ -35,6 +36,11 @@ public class AILifecycleManager
     {
         Service.EventManagerInGame.Unregister<Event_OnScore>(AI_OnScoer);
         Service.EventManagerInGame.Unregister<Event_OnGenerateCube>(AI_OnScoer);
+        foreach (var AI in AIs)
+        {
+            Object.Destroy(AI);
+        }
+        AIs.Clear();
     }
     
     public void Tracking()
