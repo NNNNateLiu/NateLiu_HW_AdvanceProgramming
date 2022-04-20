@@ -1,0 +1,102 @@
+﻿[
+  {
+    "Id": "0000",
+    "Name": "ak47",
+    "Rare": 4.0,
+    "Price": 10.0,
+    "Damage": 10.0,
+    "Weight": 5.0,
+    "Descriotion": "Wula~",
+    "": null
+  },
+  {
+    "Id": "0001",
+    "Name": "Fire Ward",
+    "Rare": 3.0,
+    "Price": 9.0,
+    "Damage": 5.0,
+    "Weight": 3.0,
+    "Descriotion": "fire ball",
+    "": null
+  },
+  {
+    "Id": "0002",
+    "Name": "Water Ward",
+    "Rare": 3.0,
+    "Price": 8.0,
+    "Damage": 5.0,
+    "Weight": 3.0,
+    "Descriotion": "water ball",
+    "": null
+  },
+  {
+    "Id": "0003",
+    "Name": "Knief",
+    "Rare": 2.0,
+    "Price": 5.0,
+    "Damage": 3.0,
+    "Weight": 2.0,
+    "Descriotion": "stab",
+    "": null
+  },
+  {
+    "Id": "0004",
+    "Name": "Sword",
+    "Rare": 2.0,
+    "Price": 5.0,
+    "Damage": 3.0,
+    "Weight": 2.0,
+    "Descriotion": "stab stab",
+    "": null
+  },
+  {
+    "Id": "0005",
+    "Name": "Spear",
+    "Rare": 2.0,
+    "Price": 6.0,
+    "Damage": 3.0,
+    "Weight": 2.0,
+    "Descriotion": "stab stab stab",
+    "": null
+  },
+  {
+    "Id": "0006",
+    "Name": "Stone",
+    "Rare": 1.0,
+    "Price": 2.0,
+    "Damage": 0.0,
+    "Weight": 1.0,
+    "Descriotion": "its round",
+    "": null
+  },
+  {
+    "Id": "0007",
+    "Name": "Stick",
+    "Rare": 1.0,
+    "Price": 2.0,
+    "Damage": 0.0,
+    "Weight": 1.0,
+    "Descriotion": "its long",
+    "": null
+  },
+  {
+    "Id": "0008",
+    "Name": "Cloth",
+    "Rare": 1.0,
+    "Price": 1.0,
+    "Damage": 0.0,
+    "Weight": 1.0,
+    "Descriotion": "its soft",
+    "": null
+  },
+  {
+    "Id": "0009",
+    "Name": "Dirt",
+    "Rare": 1.0,
+    "Price": 1.0,
+    "Damage": 0.0,
+    "Weight": 1.0,
+    "Descriotion": "its...",
+    "": null
+  }
+]

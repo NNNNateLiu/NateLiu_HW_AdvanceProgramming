@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df10e09bbea5e4bb0810319ef74a02c5, type: 3}
+  m_Name: TireData
+  m_EditorClassIdentifier: 
+  Tire1Rate: 50
+  Tire2Rate: 30
+  Tire3Rate: 15
+  Tire4Rate: 5
+  Tire1WeaponIDPool:
+  - 0006
+  - 0007
+  - 0008
+  - 0009
+  Tire2WeaponIDPool:
+  - 0003
+  - 0004
+  - 0005
+  Tire3WeaponIDPool:
+  - 0001
+  - 0002
+  Tire4WeaponIDPool:
+  - 0000
